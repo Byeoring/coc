@@ -1,5 +1,10 @@
 <script>
     import "/src/app.css";
+    import {goto} from "$app/navigation";
+    let username = '';
+    function goHome() {
+        goto('/');
+    }
 </script>
 
 <div class="grid place-items-center min-h-[90dvh]">
@@ -17,7 +22,7 @@
                                 </path>
                             </svg>
                         </span>
-                        <input type="text" id="sign-in-hwnno" class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" placeholder="행번"/>
+                        <input type="text" bind:value={username} class="rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" placeholder="행번"/>
                     </div>
                 </div>
                 <div class="flex flex-col mb-6">
@@ -28,7 +33,7 @@
                                 </path>
                             </svg>
                         </span>
-                        <input type="password" id="sign-in-hwnno" class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" placeholder="비밀번호"/>
+                        <input type="password" class=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" placeholder="비밀번호"/>
                     </div>
                 </div>
                 <div class="flex items-center mb-6 -mt-4">
@@ -39,7 +44,7 @@
                     </div>
                 </div>
                 <div class="flex w-full">
-                    <button type="submit" class="py-2 px-4  bg-blue-500 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                    <button on:click={goHome} class="py-2 px-4  bg-blue-500 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                         Login
                     </button>
                 </div>
